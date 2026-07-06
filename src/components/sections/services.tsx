@@ -31,7 +31,7 @@ export function Services() {
             const Icon = ICONS[service.id] ?? Gem;
             return (
               <Reveal key={service.id} delay={i * 0.06}>
-                <div className="group relative h-full rounded-2xl border border-gold/12 bg-charcoal/50 p-5 transition-colors duration-300 hover:border-gold/35 sm:p-6">
+                <div className="group relative h-full rounded-2xl border border-gold/14 bg-charcoal/70 p-5 backdrop-blur-md transition-colors duration-300 hover:border-gold/35 sm:p-6">
                   <div className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold/25 bg-ink/40 text-gold transition-transform duration-300 group-hover:scale-110">
                     <Icon className="h-[1.1rem] w-[1.1rem]" aria-hidden="true" />
                   </div>

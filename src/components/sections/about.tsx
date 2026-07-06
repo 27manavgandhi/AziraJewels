@@ -16,7 +16,7 @@ export function About() {
 
         <Reveal
           delay={0.1}
-          className="mt-8 rounded-2xl border border-gold/10 bg-charcoal/60 p-6 shadow-[var(--shadow-card)] backdrop-blur-sm sm:p-8"
+          className="mt-8 rounded-2xl border border-gold/12 bg-charcoal/70 p-6 shadow-[var(--shadow-card)] backdrop-blur-md sm:p-8"
         >
           <p className="text-[0.95rem] leading-relaxed text-ivory/80 sm:text-base">
             {business.aboutParagraph}

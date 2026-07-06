@@ -21,7 +21,7 @@ function ContactRow({
   return (
     <a
       href={href}
-      className="flex items-center justify-between gap-3 rounded-xl border border-gold/12 bg-charcoal/50 px-5 py-4 transition-colors duration-200 hover:border-gold/35"
+      className="flex items-center justify-between gap-3 rounded-xl border border-gold/14 bg-charcoal/70 px-5 py-4 backdrop-blur-md transition-colors duration-200 hover:border-gold/35"
     >
       <span className="flex items-center gap-3">
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink/50 text-gold">
@@ -71,7 +71,7 @@ export function Contact() {
           <WhatsAppButton size="lg" className="w-full" />
         </Reveal>
 
-        <Reveal delay={0.2} className="mt-8 rounded-2xl border border-gold/12 bg-charcoal/50 p-5 sm:p-6">
+        <Reveal delay={0.2} className="mt-8 rounded-2xl border border-gold/14 bg-charcoal/70 p-5 backdrop-blur-md sm:p-6">
           <div className="flex items-start gap-3">
             <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink/50 text-gold">
               <MapPin className="h-4 w-4" aria-hidden="true" />

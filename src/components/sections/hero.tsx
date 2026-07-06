@@ -16,11 +16,12 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden px-6 pb-10 pt-[max(2rem,env(safe-area-inset-top))] text-center"
     >
-      <AmbientGlow />
-
       <div className="relative z-10 flex w-full max-w-sm flex-col items-center sm:max-w-md">
         <Reveal>
-          <Hallmark size={64} className="mb-5 sm:mb-6" />
+          <div className="relative mb-5 sm:mb-6">
+            <AmbientGlow />
+            <Hallmark size={64} className="relative z-10" />
+          </div>
         </Reveal>
 
         <Reveal delay={0.08}>

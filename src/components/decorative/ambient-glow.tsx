@@ -1,19 +1,31 @@
 import { cn } from "@/lib/utils";
 
 /**
- * Slow, low-amplitude drifting glow — pure CSS, no JS, disabled entirely
- * under prefers-reduced-motion via the global rule in globals.css. This
- * is what keeps sections from reading as flat black; kept subtle enough
- * that it should never be the thing a visitor consciously notices.
+ * Hero-specific accent, layered on top of the global PageBackground.
+ * Meant to be rendered as a child of a `relative` wrapper around just
+ * the hallmark (see hero.tsx) — it centers on its immediate parent via
+ * left/top 50% + translate, so it stays pixel-locked to the mark
+ * regardless of viewport height.
  */
 export function AmbientGlow({ className }: { className?: string }) {
   return (
     <div
-      className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
+      className={cn("pointer-events-none absolute inset-0 flex items-center justify-center", className)}
       aria-hidden="true"
     >
-      <div className="animate-drift-a absolute -top-1/3 left-[-15%] h-[70vw] max-h-[560px] w-[70vw] max-w-[560px] rounded-full bg-gold/[0.06] blur-3xl" />
-      <div className="animate-drift-b absolute bottom-[-20%] right-[-15%] h-[60vw] max-h-[480px] w-[60vw] max-w-[480px] rounded-full bg-gold-deep/[0.12] blur-3xl" />
+      {/* Bright, tight spotlight directly behind the hallmark */}
+      <div className="absolute h-[240px] w-[240px] rounded-full bg-gold/25 blur-[55px] sm:h-[300px] sm:w-[300px]" />
+
+      {/* Light rays, centered on the same point */}
+      <div
+        className="animate-ray-spin absolute h-[820px] w-[820px] max-h-[130vw] max-w-[130vw]"
+        style={{
+          backgroundImage:
+            "repeating-conic-gradient(from 0deg, rgba(212,175,55,0.16) 0deg 2.2deg, transparent 2.2deg 18deg)",
+          WebkitMaskImage: "radial-gradient(circle, black 6%, transparent 38%)",
+          maskImage: "radial-gradient(circle, black 6%, transparent 38%)",
+        }}
+      />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { bodoniModa, jost } from "@/lib/fonts";
 import { business } from "@/data/business";
 import { Providers } from "@/components/providers";
+import { PageBackground } from "@/components/decorative/page-background";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -91,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           // input, so there's no injection surface here.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <PageBackground />
         <Providers>{children}</Providers>
       </body>
     </html>
